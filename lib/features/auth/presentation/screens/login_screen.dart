@@ -13,29 +13,31 @@ class LoginScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        body: SingleChildScrollView(
-          physics: const ClampingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 80),
-              const Icon(
-                Icons.production_quantity_limits_rounded,
-                color: Colors.white,
-                size: 100,
-              ),
-              const SizedBox(height: 80),
-              Container(
-                height: size.height - 260,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: scaffoldBackgroundColor,
-                  borderRadius:
-                      const BorderRadius.only(topLeft: Radius.circular(100)),
+        body: GeometricalBackground(
+          child: SingleChildScrollView(
+            physics: const ClampingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 80),
+                const Icon(
+                  Icons.production_quantity_limits_rounded,
+                  color: Colors.white,
+                  size: 100,
                 ),
-                child: const _LoginForm(),
-              )
-            ],
+                const SizedBox(height: 80),
+                Container(
+                  height: size.height - 260,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: scaffoldBackgroundColor,
+                    borderRadius:
+                        const BorderRadius.only(topLeft: Radius.circular(100)),
+                  ),
+                  child: const _LoginForm(),
+                )
+              ],
+            ),
           ),
         ),
       ),
