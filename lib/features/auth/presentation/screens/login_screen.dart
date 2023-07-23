@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teslo_app/features/shared/widgets/custom_text_form_field.dart';
+import 'package:go_router/go_router.dart';
+import 'package:teslo_app/features/shared/shared.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -60,6 +61,33 @@ class _LoginForm extends StatelessWidget {
             label: 'Email',
             keyboardType: TextInputType.emailAddress,
           ),
+          const SizedBox(height: 30),
+          const CustomTextFormField(
+            label: 'Password',
+            obscureText: true,
+          ),
+          const SizedBox(height: 30),
+          SizedBox(
+            width: double.infinity,
+            height: 60,
+            child: CustomFilledButton(
+              text: 'Login',
+              buttonColor: Colors.black,
+              onPressed: () {},
+            ),
+          ),
+          const Spacer(flex: 2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Don\'t have an account?'),
+              TextButton(
+                onPressed: () => context.push('/register'),
+                child: const Text('Create one'),
+              )
+            ],
+          ),
+          const Spacer(flex: 1),
         ],
       ),
     );
